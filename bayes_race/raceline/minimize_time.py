@@ -219,7 +219,10 @@ def simulate(b, a, u, path, params, plot_results, print_updates, int_method ='rk
     vxy = np.sqrt(vx**2+vy**2)
     if plot_results:
         plots(t, x, y, vxy, u, S, params)
-    
+
+    ##------------------print velocity Array
+    print("velocity: ",vxy)
+    print("len velo:", len(vxy))
     return vxy, t[-1]
 
 def optimize(path, params, plot_results, print_updates):
@@ -285,6 +288,7 @@ def calcMinimumTimeSpeed(x, y, **kwargs):
     """ wrapper function to return minimum time and speed profile only
     """
     x, y, vopt, topt, U, B = solve(x, y, **kwargs)
+    print("velo - 2: ", vopt)
     return topt, vopt
 
 def calcMinimumTimeSpeedInputs(x, y, **kwargs):

@@ -18,7 +18,7 @@ from botorch import fit_gpytorch_model
 from botorch.acquisition.monte_carlo import qExpectedImprovement, qNoisyExpectedImprovement
 from botorch.sampling.samplers import SobolQMCNormalSampler
 
-from bayes_race.tracks import MAP2
+from bayes_race.tracks import MAP8
 from bayes_race.params import F110
 from bayes_race.raceline import randomTrajectory
 from bayes_race.raceline import calcMinimumTime
@@ -28,7 +28,7 @@ from matplotlib import pyplot as plt
 #####################################################################
 # set device in torch
 
-# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device = torch.device("cpu")
 dtype = torch.float
 
@@ -41,10 +41,10 @@ np.random.seed(SEED)
 
 BATCH_SIZE = 1              # useful for parallelization, DON'T change
 N_TRIALS = 3                # number of times bayesopt is run
-N_BATCH = 100               # new observations after initialization
+N_BATCH = 10               # new observations after initialization
 MC_SAMPLES = 64             # monte carlo samples
 N_INITIAL_SAMPLES = 10      # samples to initialize GP
-PLOT_RESULTS = False        # whether to plot results
+PLOT_RESULTS = True        # whether to plot results
 SAVE_RESULTS = True         # whether to save results
 N_WAYPOINTS = 100           # resampled waypoints
 SCALE = 0.90                # shrinking factor for track width
@@ -54,8 +54,8 @@ LASTIDX = 1                 # fixed node at the end DO NOT CHANGE
 # track specific data
 
 params = F110()
-track_name = 'MAP2'
-track = MAP2()
+track_name = 'MAP8'
+track = MAP8()
 NODES = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 5]
 
 track_width = track.track_width*SCALE

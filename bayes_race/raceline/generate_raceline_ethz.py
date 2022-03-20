@@ -41,10 +41,10 @@ np.random.seed(SEED)
 
 BATCH_SIZE = 1              # useful for parallelization, DON'T change
 N_TRIALS = 3                # number of times bayesopt is run
-N_BATCH = 100               # new observations after initialization
+N_BATCH = 10               # new observations after initialization
 MC_SAMPLES = 64             # monte carlo samples
 N_INITIAL_SAMPLES = 10      # samples to initialize GP
-PLOT_RESULTS = False        # whether to plot results
+PLOT_RESULTS = True        # whether to plot results
 SAVE_RESULTS = True         # whether to save results
 N_WAYPOINTS = 100           # resampled waypoints
 SCALE = 0.95                # shrinking factor for track width

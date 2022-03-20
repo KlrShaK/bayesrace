@@ -8,7 +8,7 @@ __email__ = 'achinj@seas.upenn.edu'
 
 import numpy as np
 
-from bayes_race.tracks import MAP2, ComputeIO
+from bayes_race.tracks import MAP8, ComputeIO
 from bayes_race.params import F110
 from bayes_race.raceline import randomTrajectory
 from bayes_race.raceline import calcMinimumTimeSpeedInputs
@@ -24,11 +24,11 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 SAVE_RESULTS = False
 
 params = F110()
-track_name = 'MAP2'
+track_name = 'MAP8'
 
-if track_name is 'MAP2':
-    savestr = '20201103033427'
-    track = MAP2()
+if track_name is 'MAP8':
+    savestr = '20220320121020'
+    track = MAP8()
     NODES = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 5]
     LASTIDX = 1
 
